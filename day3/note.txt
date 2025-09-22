@@ -1,4 +1,4 @@
-Day 3: Error Handling in Shell Scripting
+Day 3: Error Handling in Shell Scripting and django app delpoyed
 
 In shell scripting, there is no try-catch. We handle errors using if-then or by checking the command’s success.
 

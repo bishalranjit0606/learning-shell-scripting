@@ -1,0 +1,39 @@
+Day 3: Error Handling in Shell Scripting
+
+In shell scripting, there is no try-catch. We handle errors using if-then or by checking the command’s success.
+
+Problem:
+Creating a folder that already exists will fail:
+
+#!/bin/bash
+function cr-dir() {
+    mkdir demo
+}
+cr-dir
+echo "this should not work"
+
+
+1st run: works fine.
+
+2nd run: mkdir: demo: File exists
+
+Fixed version using if:
+
+#!/bin/bash
+function cr-dir() {
+    mkdir demo
+}
+
+if ! cr-dir; then
+    echo "Directory 'demo' already exists or could not be created."
+    exit 1
+fi
+
+echo "Directory 'demo' was created successfully."
+
+
+The if ! cr-dir checks if the command fails.
+
+The exit 1 stops the script on error.
+
+The success message only prints if the folder is created.
